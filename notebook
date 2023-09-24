@@ -1,0 +1,55 @@
+import nbformat as nbf
+
+# Create a new notebook
+nb = nbf.v4.new_notebook()
+
+# Create a markdown cell with the title of the notebook
+nb['cells'].append(nbf.v4.new_markdown_cell(source='## Data Science Notebook'))
+
+# Create a markdown cell for an introduction
+nb['cells'].append(nbf.v4.new_markdown_cell(source='This notebook is an introduction to data science.'))
+
+# Create a markdown cell to list data science languages
+nb['cells'].append(nbf.v4.new_markdown_cell(source='**Data science languages:**'))
+nb['cells'].append(nbf.v4.new_markdown_cell(source='* Python'))
+nb['cells'].append(nbf.v4.new_markdown_cell(source='* R'))
+nb['cells'].append(bf.v4.new_markdown_cell(source='* Julia'))
+
+# Create a markdown cell to list data science libraries
+nb['cells'].append(nbf.v4.new_markdown_cell(source='**Data science libraries:**'))
+nb['cells'].append(nbf.v4.new_markdown_cell(source='* NumPy'))
+nb['cells'].append(nbf.v4.new_markdown_cell(source='* Pandas'))
+nb['cells'].append(nbf.v4.new_markdown_cell(source='* Scikit-learn'))
+
+# Create a markdown cell with a table of Data Science tools
+nb['cells'].append(nbf.v4.new_markdown_cell(source='**Data science tools:**'))
+table = nbf.v4.new_table_cell()
+table.header = ['Tool', 'Description']
+table.rows = [[Python, A popular general-purpose programming language that is widely used for data science.],
+              [R, A programming language and free software environment for statistical computing and graphics.],
+              [Julia, A high-level, high-performance, dynamic programming language for technical computing.]]
+nb['cells'].append(table)
+
+# Create a markdown cell introducing arithmetic expression examples
+nb['cells'].append(nbf.v4.new_markdown_cell(source='**Arithmetic expression examples:**'))
+nb['cells'].append(nbf.v4.new_markdown_cell(source="* `2 + 2 = 4`"))
+nb['cells'].append(nbf.v4.new_markdown_cell(source="* `5 * 10 = 50`"))
+nb['cells'].append(nbf.v4.new_markdown_cell(source="* `100 / 20 = 5`"))
+
+# Create a code cell to multiply and add numbers
+nb['cells'].append(nbf.v4.new_code_cell(source='print(2 + 2 * 5)'))
+
+# Create a code cell to convert minutes to hours
+nb['cells'].append(nbf.v4.new_code_cell(source='def minutes_to_hours(minutes):\n  hours = minutes / 60\n  return hours\n\nprint(minutes_to_hours(60))'))
+
+# Insert a markdown cell to list Objectives
+nb['cells'].append(nbf.v4.new_markdown_cell(source='**Objectives:**'))
+nb['cells'].append(nbf.v4.new_markdown_cell(source='* Learn the basics of data science languages and libraries.'))
+* Learn how to perform basic arithmetic operations in Python.'))
+
+# Create a markdown cell to indicate the Author’s name.
+nb['cells'].append(nbf.v4.new_markdown_cell(source='**Author:** Bard'))
+
+# Save the notebook
+with open('data_science_notebook.ipynb', 'w') as f:
+  f.write(nbf.writes(nb))
